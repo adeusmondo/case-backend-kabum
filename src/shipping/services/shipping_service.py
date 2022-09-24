@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from logger import Logger
+from config import Config
 
 
 class ShippingService:
@@ -30,7 +31,8 @@ class ShippingService:
                  constant_shipping_calculation=0.2)
         ]
 
-    def calculating_shipping_cost(self, shipping_option, product):
+    @staticmethod
+    def calculating_shipping_cost(shipping_option, product):
         cost = Decimal((product['weight'] * shipping_option['constant_shipping_calculation']) / 10)
         shipping_option['shipping_cost'] = cost
 
@@ -52,3 +54,10 @@ class ShippingService:
                 options.append(self.calculating_shipping_cost(shipping_option, product))
 
         return options
+
+    async def get_shipping_options(self):
+        if Config.DB_URL is not None:
+            # TODO: Implement this method when database is available
+            pass
+
+        return self.retrieve_shipping_options()

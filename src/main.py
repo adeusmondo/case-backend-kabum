@@ -16,7 +16,10 @@ def create_app():
     from shipping.routes.calculate_shipping import controllers as calculate_shipping_module
     calculate_shipping_module.configure(app)
 
-    container.wire(modules=[health_module, calculate_shipping_module])
+    from shipping.routes.shipping_options import controllers as shipping_options_module
+    shipping_options_module.configure(app)
+
+    container.wire(modules=[health_module, calculate_shipping_module, shipping_options_module])
 
     app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"],
                        allow_headers=["*"])

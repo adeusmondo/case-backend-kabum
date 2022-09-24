@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Shipping Calculation API"
-version = "0.1.0"
+version = "0.1.0-alpha.0"
 description = "Technical test for Kabum of a freight calculation API"
 authors = ["Carlos Mondo <csvmondo@gmail.com>"]
 license = "MIT License"

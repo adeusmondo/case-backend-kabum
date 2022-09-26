@@ -1,8 +1,8 @@
-from aiologger.logger import Logger as AIOLogger
 from aiologger.formatters.base import Formatter
 from aiologger.handlers.streams import AsyncStreamHandler
+from aiologger.logger import Logger as AIOLogger
 
-from config import Config
+from src.config import Config
 
 
 class Logger(AIOLogger):

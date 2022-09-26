@@ -1,7 +1,7 @@
 from dependency_injector import containers, providers
 
-from logger import Logger
-from shipping.services.shipping_service import ShippingService
+from src.logger import Logger
+from src.shipping.services.shipping_service import ShippingService
 
 
 class Container(containers.DeclarativeContainer):

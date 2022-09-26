@@ -31,18 +31,21 @@ class ProductPayload(BaseModel):
 
 
 class CalculateShippingResponse(BaseModel):
-    nome: str = Field(
+    name: str = Field(
         title='Nome',
         description='Nome do serviço de entrega',
-        alias='name'
+        alias='nome'
     )
-    valor_frete: float = Field(
+    shipping_cost: float = Field(
         title='Valor do frete',
         description='Valor do frete, de acordo com o cálculo da freteadora',
-        alias='shipping_cost'
+        alias='valor_frete'
     )
-    prazo_dias: int = Field(
+    delivery_deadline: int = Field(
         title='Prazo de entrega',
         description='Prazo de entrega em dias úteis',
-        alias='delivery_deadline'
+        alias='prazo_dias'
     )
+
+    class Config:
+        allow_population_by_field_name = True

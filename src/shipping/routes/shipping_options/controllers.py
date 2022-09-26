@@ -1,11 +1,11 @@
 from typing import List
 
-from containers import Container
 from dependency_injector.wiring import Provide, inject
 from fastapi import APIRouter, Depends, FastAPI, HTTPException
-from logger import Logger
-from shipping.routes.shipping_options.schemas import ShippingOptionResponse
-from shipping.services.shipping_service import ShippingService
+from src.containers import Container
+from src.logger import Logger
+from src.shipping.routes.shipping_options.schemas import ShippingOptionResponse
+from src.shipping.services.shipping_service import ShippingService
 
 router = APIRouter()
 

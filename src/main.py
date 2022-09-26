@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from containers import Container
+from src.containers import Container
 
 
 def create_app():
@@ -10,13 +10,13 @@ def create_app():
 
     container = Container()
 
-    from shipping.routes.health import controllers as health_module
+    from src.shipping.routes.health import controllers as health_module
     health_module.configure(app)
 
-    from shipping.routes.calculate_shipping import controllers as calculate_shipping_module
+    from src.shipping.routes.calculate_shipping import controllers as calculate_shipping_module
     calculate_shipping_module.configure(app)
 
-    from shipping.routes.shipping_options import controllers as shipping_options_module
+    from src.shipping.routes.shipping_options import controllers as shipping_options_module
     shipping_options_module.configure(app)
 
     container.wire(modules=[health_module, calculate_shipping_module, shipping_options_module])

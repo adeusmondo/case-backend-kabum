@@ -1,7 +1,7 @@
 from decimal import Decimal
 
-from logger import Logger
-from config import Config
+from src.config import Config
+from src.logger import Logger
 
 
 class ShippingService:
@@ -42,7 +42,6 @@ class ShippingService:
         '''
         This method is used to validate the product dimensions
         '''
-        print('aaaa')
         options = []
         product_dimensions = product['dimension']
         shipping_options = self.retrieve_shipping_options()
